@@ -6,4 +6,37 @@
     "statusBar.background": "#770909"
     "titleBar.activeBackground": "#da1313"
   }
-}
+}<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location Finder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #location {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Your Location</h1>
+    <button id="getLocation">Get My Location</button>
+    <div id="location"></div>
+
+    <script>
+        document.getElementById('getLocation').onclick = function() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition, showError);
+            } else {
+                document.getElementById('location').innerHTML = "Geolocation is not supported by this browser.";
+            }
+        };
+
+        function showPosition(position) {
+            const lat = position ⬤
